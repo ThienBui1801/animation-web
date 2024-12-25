@@ -7,11 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     initBarbaTransitions();
 
     if (innerWidth >= 992) {
-        scrollText();
+        scrollTextX();
     }
     
     scrollTextMobile();
     setupSplits();
+    scrollBannerXX();
+    imageMove();
 
     includeSVG('#title-contact', 'assets/img/contact.svg');
     includeSVG('#title-about', 'assets/img/about.svg');
