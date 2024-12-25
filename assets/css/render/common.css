@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color--bg-200: #f8f8f8;
+    --color--primary-100: #292b34;
+    --color--txt-900: #292b34;
+    --size--gap-200: 24px;
+    --color--txt-300: #a4a4a4;
+    --color--txt-200: #f9f6f0;
+    --size--p-100: 16px;
+    --color--txt-80: #fffc;
+    --color--txt-60: #fff6;
+    --size--p-200: 24px;
+    --color--stroke-100: #ffffff52;
+    --color--stroke-200: #fff;
+    --color--text--90: #ffffffe6;
+    --color--overlay100: #292b3499;
+    --color--overlay50: #292b3433;
+    --size--p-180: 20px;
+}
+
+.text100 {
+    color: var(--color--txt-900);
+    cursor: default;
+    margin-bottom: 0;
+    font-size: clamp(14px, .7vw, 16px);
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.text200 {
+    color: var(--color--txt-900);
+    cursor: default;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: 500;
+    line-height: 1.21;
+    text-decoration: none;
+}
+
+.text400 {
+    cursor: default;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: clamp(20px, 1.25vw, 26px);
+    font-weight: 500;
+    line-height: 1.21;
+}
+
+.pb50 {
+    padding-bottom: clamp(8px, 1vw, 12px);
+}
+
+.pb100 {
+    padding-bottom: clamp(24px, 2vw, 32px);
+}
+
+.pb300 {
+    padding-bottom: clamp(40px, 8vw, 56px);
+}
+
+.w-input,
+.w-select {
+    color: #333;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    display: block;
+}
+
+textarea.w-input,
+textarea.w-select {
+    height: auto;
+}
+
+.w-button {
+    color: #fff;
+    line-height: inherit;
+    cursor: pointer;
+    background-color: #3898ec;
+    border: 0;
+    border-radius: 0;
+    padding: 9px 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--color--txt-60);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: var(--color--txt-60);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color--txt-60);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: var(--color--txt-60);
+    color: var(--color--txt-80);
+    cursor: pointer;
+    background-color: #0000;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: clamp(.875rem, .834091rem + .181818vw, 1.125rem);
+    transition-property: border-radius, color, background-color;
+    transition-duration: .5s, .4s, .4s;
+    transition-timing-function: ease, ease, ease;
+}
