@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
         initCursorFollower();
     }
 
-    scrollTextMobile();
+    if (innerWidth <= 991) {
+        scrollTextMobile();
+    }
+
     setupSplits();
     scrollBannerXX();
     imageMove();

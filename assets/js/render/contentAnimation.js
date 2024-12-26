@@ -19,6 +19,7 @@
           scale: 2,
           z: 350,
           transformOrigin: "center center",
+          opacity: 0,
           ease: "power1.inOut",
         })
         .to(
@@ -28,7 +29,6 @@
             transformOrigin: "center center",
             ease: "power1.inOut",
           },
-          "<"
         );
     });
   }
