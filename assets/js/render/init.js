@@ -3,17 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const lenis = new Lenis({
         autoRaf: true,
     });
-    initCursorFollower();
     initBarbaTransitions();
 
     if (innerWidth >= 992) {
         scrollTextX();
+        initCursorFollower();
     }
-    
+
     scrollTextMobile();
     setupSplits();
     scrollBannerXX();
     imageMove();
+    fadeInUp();
 
     includeSVG('#title-contact', 'assets/img/contact.svg');
     includeSVG('#title-about', 'assets/img/about.svg');

@@ -20,6 +20,7 @@
                 ease: 'power3.out'
             });
         });
+
         ScrollTrigger.create({
             trigger: 'html',
             start: 'top center',
@@ -101,10 +102,48 @@
                 }
             });
         });
+
+        document.querySelectorAll('[data-bg]').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                if (element.dataset.bg === 'bgWhite') {
+                    gsap.to(cursorFollower, {
+                        width: 20,
+                        height: 20,
+                        borderRadius: '50%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        duration: 1,
+                    });
+
+                    document.addEventListener('mousemove', moveCursorWithinLogo);
+
+                    function moveCursorWithinLogo(e) {
+                        gsap.to(cursorFollower, {
+                            x: e.clientX,
+                            y: e.clientY,
+                            duration: 1,
+                            ease: 'power3.out'
+                        });
+                    }
+
+                    element.addEventListener('mouseleave', () => {
+                        document.removeEventListener('mousemove', moveCursorWithinLogo);
+                        gsap.to(cursorFollower, {
+                            width: 20,
+                            height: 20,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                            duration: 1
+                        });
+                    }, {
+                        once: true
+                    });
+                }
+            });
+        });
     }
 
-    
-    
+
+
     window.delay = delay;
     window.initCursorFollower = initCursorFollower;
 })();

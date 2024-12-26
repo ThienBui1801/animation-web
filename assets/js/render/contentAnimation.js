@@ -48,7 +48,10 @@
     const blocks = document.querySelectorAll('.block');
     const titleElement = document.querySelector('.title');
 
-    blocks.forEach((block) => {
+    blocks.forEach((block, index) => {
+      console.log(index, `${block.dataset.title}`);
+      console.log(index === 0);
+
       ScrollTrigger.create({
         trigger: block,
         start: "top 100%",
@@ -60,7 +63,7 @@
         },
         onEnterBack: () => {
           updateTitle(block.dataset.title);
-        }
+        },
       });
     });
 
@@ -70,6 +73,7 @@
       }
     }
   }
+
 
   function scrollTextMobile() {
     const blocks = document.querySelectorAll('.block-mobile');
@@ -207,6 +211,29 @@
     });
   }
 
+  function fadeInUp() {
+    const fadeInUpSections = document.querySelectorAll(".fade-in-up-section");
+
+    const isElementInViewport = (el) => {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= window.innerHeight && rect.bottom >= 0
+      );
+    };
+
+    const handleScroll = () => {
+      fadeInUpSections.forEach((section) => {
+        if (isElementInViewport(section)) {
+          section.classList.add("is-visible");
+        }
+      });
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+  }
+
   window.scrollTextX = scrollTextX;
   window.scrollBannerXX = scrollBannerXX;
   window.contentAnimation = contentAnimation;
@@ -214,4 +241,5 @@
   window.includeSVG = includeSVG;
   window.scrollTextMobile = scrollTextMobile;
   window.imageMove = imageMove;
+  window.fadeInUp = fadeInUp;
 })();
