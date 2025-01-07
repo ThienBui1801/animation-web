@@ -15,7 +15,7 @@
       });
 
       timeline
-        .to("img", {
+        .to("img.banner-image", {
           scale: 2,
           z: 350,
           transformOrigin: "center center",
